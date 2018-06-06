@@ -7,5 +7,6 @@ CG Rendering and Practice Program Template
 
 3. Run `npm install` in Visual Studio Code integrated terminal.
 
+4. Enjoy!
 
 Tokyo Denki University, Department of Information Systems and Multimedia Design
