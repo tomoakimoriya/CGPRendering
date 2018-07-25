@@ -5,11 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch index.html",
+            "name": "Chrome Launch index.html",
             "type": "chrome",
             "request": "launch",
             "preLaunchTask": "tsc",
-            "file": "${workspaceRoot}/index.html"
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "name": "Edge Launch index.html",
+            "type": "edge",
+            "request": "launch",
+            "preLaunchTask": "tsc",
+            "file": "${workspaceFolder}/index.html"
         },
         {
             "type": "chrome",

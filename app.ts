@@ -5,7 +5,7 @@ class ThreeJSTest {
     private camera: THREE.Camera;
     private renderer: THREE.WebGLRenderer;
     private geometry: THREE.Geometry;
-    private material: THREE.Material;
+    private material: THREE.MeshNormalMaterial;
     private cube: THREE.Mesh;
     private light: THREE.Light;
     private screenWidth: number = 640;
