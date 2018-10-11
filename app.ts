@@ -52,7 +52,7 @@ class ThreeJSTest {
 
 }
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", function () {
     var threeJSTest = new ThreeJSTest();
-    threeJSTest.render(); 
-};
+    threeJSTest.render();
+});
