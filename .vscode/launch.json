@@ -10,7 +10,8 @@
             "name": "localhost に対して Chrome を起動",
             "url": "http://localhost:8080",
             "preLaunchTask": "npm: start",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
         },
         {
             "type": "edge",
@@ -18,7 +19,8 @@
             "name": "Launch Edge",
             "url": "http://localhost:8080",
             "preLaunchTask": "npm: start",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
         },
     ]
 }
