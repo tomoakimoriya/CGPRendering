@@ -1,9 +1,9 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as dat from "dat.gui";
-import * as Stats from "stats.js";
-import * as TWEEN from "@tweenjs/tween.js";
 import * as Physijs from "physijs-webpack";
+import Stats from "stats.js";
+import TWEEN from "@tweenjs/tween.js";
 
 
 class ThreeJSContainer {
@@ -19,25 +19,26 @@ class ThreeJSContainer {
 
     // 画面部分の作成(表示する枠ごとに)
     public createRendererDOM = (width: number, height: number, cameraPos: THREE.Vector3) => {
-        const renderer = new THREE.WebGLRenderer();
+        let renderer = new THREE.WebGLRenderer();
         renderer.setSize(width, height);
         renderer.setClearColor(new THREE.Color(0x495ed));
 
-        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        //カメラの設定
+        let camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         camera.position.copy(cameraPos);
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        camera.lookAt(new THREE.Vector3(0,0,0));
 
-        const orbitControls = new OrbitControls(camera, renderer.domElement);
+        let orbitControls = new OrbitControls(camera, renderer.domElement);
 
         // 毎フレームのupdateを呼んで，render
-        // reqest... により次フレームを呼ぶ
-        const render = () => {
+        // reqestAnimationFrame により次フレームを呼ぶ
+        let render: FrameRequestCallback = (time) => {
             orbitControls.update();
 
             renderer.render(this.scene, camera);
             requestAnimationFrame(render);
         }
-        render();
+        requestAnimationFrame(render);
 
         renderer.domElement.style.cssFloat = "left";
         renderer.domElement.style.margin = "10px";
@@ -48,28 +49,32 @@ class ThreeJSContainer {
     private createScene = () => {
         this.scene = new THREE.Scene();
 
-        this.geometry = new THREE.BoxGeometry(1, 1, 1);
+        this.geometry = new THREE.BoxGeometry(3, 3, 3);
         this.material = new THREE.MeshLambertMaterial({ color: 0x55ff00 });
         this.cube = new THREE.Mesh(this.geometry, this.material);
+        this.cube.position.y = 3;
+        this.cube.castShadow = true;
         this.scene.add(this.cube);
 
+        //ライトの設定
         this.light = new THREE.DirectionalLight(0xffffff);
-        var lvec = new THREE.Vector3(1, 1, 1).normalize();
+        let lvec = new THREE.Vector3(1, 1, 1).normalize();
         this.light.position.set(lvec.x, lvec.y, lvec.z);
         this.scene.add(this.light);
 
+
         // 毎フレームのupdateを呼んで，更新
-        // reqest... により次フレームを呼ぶ
-        const update = () => {
+        // reqestAnimationFrame により次フレームを呼ぶ
+        let update: FrameRequestCallback = (time) => {
             this.cube.rotateX(0.01);
 
             requestAnimationFrame(update);
         }
-        update();
+        requestAnimationFrame(update);
     }
 }
 
-const container = new ThreeJSContainer();
+let container = new ThreeJSContainer();
 
-const viewport = container.createRendererDOM(640, 480, new THREE.Vector3(3, 3, 3));
+let viewport = container.createRendererDOM(640, 480, new THREE.Vector3(-10, 10, 10));
 document.body.appendChild(viewport);
