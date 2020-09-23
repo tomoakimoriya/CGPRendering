@@ -1,6 +1,5 @@
 {
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "debug.chrome.useV3": false,
   "debug.javascript.usePreview": false,
 }

@@ -32,13 +32,13 @@
     "@types/webpack": "^4.41.22",
     "copy-webpack-plugin": "^6.1.1",
     "html-webpack-plugin": "^4.5.0",
+    "nan": "^2.14.1",
     "raw-loader": "^4.0.1",
     "ts-loader": "^8.0.4",
-    "typescript": "*",
-    "webpack": "*",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "worker-loader": "^3.0.2",
-    "nan": "*"
+    "worker-loader": "^3.0.3"
   }
 }
