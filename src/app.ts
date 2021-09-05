@@ -8,7 +8,7 @@ import TWEEN from "@tweenjs/tween.js";
 
 class ThreeJSContainer {
     private scene: THREE.Scene;
-    private geometry: THREE.Geometry;
+    private geometry: THREE.BufferGeometry;
     private material: THREE.Material;
     private cube: THREE.Mesh;
     private light: THREE.Light;
