@@ -26,7 +26,7 @@ class ThreeJSContainer {
         //カメラの設定
         let camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         camera.position.copy(cameraPos);
-        camera.lookAt(new THREE.Vector3(0,0,0));
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
 
         let orbitControls = new OrbitControls(camera, renderer.domElement);
 
@@ -49,10 +49,9 @@ class ThreeJSContainer {
     private createScene = () => {
         this.scene = new THREE.Scene();
 
-        this.geometry = new THREE.BoxGeometry(3, 3, 3);
+        this.geometry = new THREE.BoxGeometry(1, 1, 1);
         this.material = new THREE.MeshLambertMaterial({ color: 0x55ff00 });
         this.cube = new THREE.Mesh(this.geometry, this.material);
-        this.cube.position.y = 3;
         this.cube.castShadow = true;
         this.scene.add(this.cube);
 
@@ -61,7 +60,6 @@ class ThreeJSContainer {
         let lvec = new THREE.Vector3(1, 1, 1).normalize();
         this.light.position.set(lvec.x, lvec.y, lvec.z);
         this.scene.add(this.light);
-
 
         // 毎フレームのupdateを呼んで，更新
         // reqestAnimationFrame により次フレームを呼ぶ
@@ -76,5 +74,5 @@ class ThreeJSContainer {
 
 let container = new ThreeJSContainer();
 
-let viewport = container.createRendererDOM(640, 480, new THREE.Vector3(-10, 10, 10));
+let viewport = container.createRendererDOM(640, 480, new THREE.Vector3(-3, 3, 3));
 document.body.appendChild(viewport);
