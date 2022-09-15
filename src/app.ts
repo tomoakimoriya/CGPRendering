@@ -76,3 +76,10 @@ let container = new ThreeJSContainer();
 
 let viewport = container.createRendererDOM(640, 480, new THREE.Vector3(-3, 3, 3));
 document.body.appendChild(viewport);
+
+if (module['hot']) {
+    module['hot'].dispose(() => {
+        document.body.innerHTML = "";
+      });
+    module['hot'].accept();
+}
