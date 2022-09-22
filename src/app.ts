@@ -1,10 +1,5 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import * as dat from "dat.gui";
-import * as Physijs from "physijs-webpack";
-import Stats from "stats.js";
-import TWEEN from "@tweenjs/tween.js";
-
 
 class ThreeJSContainer {
     private scene: THREE.Scene;
@@ -17,7 +12,7 @@ class ThreeJSContainer {
         this.createScene();
     }
 
-    // 画面部分の作成(表示する枠ごとに)
+    // 画面部分の作成(表示する枠ごとに)*
     public createRendererDOM = (width: number, height: number, cameraPos: THREE.Vector3) => {
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize(width, height);
