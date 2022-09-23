@@ -67,14 +67,11 @@ class ThreeJSContainer {
     }
 }
 
-let container = new ThreeJSContainer();
+window.addEventListener("DOMContentLoaded", init);
 
-let viewport = container.createRendererDOM(640, 480, new THREE.Vector3(-3, 3, 3));
-document.body.appendChild(viewport);
+function init() {
+    let container = new ThreeJSContainer();
 
-if (module['hot']) {
-    module['hot'].dispose(() => {
-        document.body.innerHTML = "";
-      });
-    module['hot'].accept();
+    let viewport = container.createRendererDOM(640, 480, new THREE.Vector3(-3, 3, 3));
+    document.body.appendChild(viewport);
 }
