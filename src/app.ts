@@ -9,7 +9,7 @@ class ThreeJSContainer {
     private light: THREE.Light;
 
     constructor() {
-        this.createScene();
+
     }
 
     // 画面部分の作成(表示する枠ごとに)*
@@ -25,6 +25,7 @@ class ThreeJSContainer {
 
         let orbitControls = new OrbitControls(camera, renderer.domElement);
 
+        this.createScene();
         // 毎フレームのupdateを呼んで，render
         // reqestAnimationFrame により次フレームを呼ぶ
         let render: FrameRequestCallback = (time) => {
