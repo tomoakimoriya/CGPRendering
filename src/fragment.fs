@@ -10,6 +10,7 @@ varying vec3 vnormal;
 void main()
 {
     float lambert = dot(vnormal, directionalLights[0].direction);
-    vec3 pcolor = modelcolor * lambert;
+    float half_lambert = pow(lambert * (1.0 / 2.0) + 1.0 / 2.0, 2.0);
+    vec3 pcolor = modelcolor * half_lambert;
     gl_FragColor = vec4( pcolor.xyz, 1.0 );
 }
