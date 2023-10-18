@@ -20,19 +20,19 @@
   },
   "homepage": "https://github.com/tomoakimoriya/CGPRendering#readme",
   "dependencies": {
-    "@types/three": "^0.154.0",
-    "three": "^0.154.0"
+    "@types/three": "^0.157.0",
+    "three": "^0.157.0"
   },
   "devDependencies": {
-    "@types/webpack": "^5.28.1",
+    "@types/webpack": "^5.28.3",
     "@webpack-cli/serve": "^2.0.5",
     "copy-webpack-plugin": "^11.0.0",
     "html-webpack-plugin": "^5.5.3",
-    "nan": "^2.17.0",
+    "nan": "^2.18.0",
     "raw-loader": "^4.0.2",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.2",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
     "webpack-dev-server": "^4.15.1",
     "webpack-cli": "^5.1.4",
     "worker-loader": "^3.0.8"

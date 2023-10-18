@@ -15,6 +15,7 @@ class ThreeJSContainer {
     // 画面部分の作成(表示する枠ごとに)*
     public createRendererDOM = (width: number, height: number, cameraPos: THREE.Vector3) => {
         let renderer = new THREE.WebGLRenderer();
+
         renderer.setSize(width, height);
         renderer.setClearColor(new THREE.Color(0x495ed));
 
@@ -51,7 +52,7 @@ class ThreeJSContainer {
         this.scene.add(this.cube);
 
         //ライトの設定
-        this.light = new THREE.DirectionalLight(0xffffff);
+        this.light = new THREE.DirectionalLight(0xffffff, Math.PI);
         let lvec = new THREE.Vector3(1, 1, 1).normalize();
         this.light.position.set(lvec.x, lvec.y, lvec.z);
         this.scene.add(this.light);
