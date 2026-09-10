@@ -2,11 +2,11 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 class ThreeJSContainer {
-    private scene: THREE.Scene;
-    private geometry: THREE.BufferGeometry;
-    private material: THREE.Material;
-    private cube: THREE.Mesh;
-    private light: THREE.Light;
+    private scene!: THREE.Scene;
+    private geometry!: THREE.BufferGeometry;
+    private material!: THREE.Material;
+    private cube!: THREE.Mesh;
+    private light!: THREE.Light;
 
     constructor() {
         this.createScene();
